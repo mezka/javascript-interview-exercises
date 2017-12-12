@@ -223,9 +223,17 @@ function buscarEnGithub(texto, callback) {
       // error[1] de GitHub
     })
     ```
+
+    La replique en index.js
+
   - y a la solución anterior
-    - ¿Cómo podrías agregarle otra búsqueda?
-    - ¿Cómo solucionas el problema de si una API entrega un error, mientras las otras devuelven data?
+  - ¿Cómo podrías agregarle otra búsqueda?
+
+  Referirse a index.js
+
+  - ¿Cómo solucionas el problema de si una API entrega un error, mientras las otras devuelven data?
+
+  Se usa catch en la promise para efectuar una HTTP response acorde a lo que necesite la aplicacion
 
 
 
