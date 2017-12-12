@@ -67,7 +67,7 @@
 
   ```javascript
     Foo.prototype = {
-      biz: function(a) {
+      biz: function() {
         return this.baz();
       }
     };
@@ -111,50 +111,31 @@ var endorsements = [
   { skill: 'html', user: 'Sue' }
 ];
 
-
-var solver = {
-  internalObj: {},
+var nuevoEndorsements = endorsements.reduce(function(accumulator, current){
   
-  addUser: function(skill, name){
-    if(!this.internalObj[skill]){
-      this.internalObj[skill] = [name]; 
+    var index = accumulator.findIndex(curObj => curObj.skill === current.skill);
+    
+    if(index === -1){
+      accumulator.push({
+        skill: current.skill,
+        users: [current.user],
+        count: 1,
+      });
     }else{
-      this.internalObj[skill].push(name);
-    }
-  },
-  
-  addFromEndorsements: function(arr){
-    arr.forEach(function(currObj){
-      this.addUser(currObj.skill, currObj.user);
-    }.bind(this));
-  },
-  
-  arrObj: function(){
-    var arrOut = [];
-    
-    for (var key in this.internalObj){
-      arrOut.push(
-        {
-          skill: key,
-          users: this.internalObj[key],
-          count: this.internalObj[key].length,
-        }
-      );
+      
+      
+      
+      accumulator[index].users.push(current.user);
+      accumulator[index].count++;
     }
     
-    return arrOut;
-  },
-  solve: function(endorsements){
-    this.addFromEndorsements(endorsements);
-    return this.arrObj();
-  }
-};
+    return accumulator;
+  }, []);
 
 
-
-var nuevoEndorsements = solver.solve(endorsements);
 
 console.log(nuevoEndorsements);
+
 ```
 
 ### CASO 3

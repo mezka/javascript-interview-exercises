@@ -86,11 +86,15 @@ true
 false
 
 
-Esto ocurre porque cuando el operador '==' compara un booleano con otra expresion de otro tipo de datos, utiliza la coercion de tipos de dato a booleano de la expresion no booleana, entonces, expresiones tal como 0, '', null, y otros, terminan siendo evaluadas como false.
+Esto ocurre porque cuando el operador '==' compara un booleano con otra expresion de otro tipo de datos, utiliza la coercion de tipos de dato para convertirlas las dos en el mismo tipo de datos, y el criterio que se utiliza no es muy intuitivo, incluso aveces convirtiendo booleanos a numero lo cual es extremadamente poco intuitivo.
 
-Por eso se dice que tales expresiones son falsey.
+En lo personal evito usar el operador '==' y para saber el resultado de una comparacion de estas utilizo esta tabla:
+
+https://dorey.github.io/JavaScript-Equality-Table/
 
 Esto no ocurre con el operador '===', el mismo no hace coercion de tipos de dato para evaluar expresiones de distinto tipo de datos, simplemente las considera desiguales.
+
+Por eso siempre elijo usar el operador '==='
 
 ### Node
 

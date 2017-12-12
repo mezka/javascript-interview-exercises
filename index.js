@@ -1,5 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var githubService = require('./services/githubService.js');
+var errorService = require('./services/errorService.js');
 
 var app = module.exports = express();
 var port = 59876;
@@ -10,8 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-var githubService = require('./services/githubService.js');
-var errorService = require('./services/errorService.js');
+
 
 
 app.get('/api/github/:user', function(req, res){
