@@ -180,34 +180,34 @@ function buscarEnGithub(texto, callback) {
 }
 ```
 
-```javascript
-function buscarEnFacebook(texto){
-  
-  /* Hace algunas cosas y devuelve una promesa que resuelve o rechaza en "result" */
-
-
-  algunasCosasDevuelveUnaPromesa(/*argumentos*/)
-  
-  //Tal como puede ser una llamada http a un servicio rest con axios
-    
-    .then(function(result){
-
-      //la promesa vuelve en estado 'fullfilled' y por eso sabemos que los datos estan
-
-      return result.data;
-    })
-    .catch(function(result){
-      
-      //la promesa vuelve en estado 'rejected y por eso sabemos que recibimos un error
-
-      return result.error
-    })
-}
-```
-
-
-
   - ¿Qué debería hacer para usar la funcionalidad con promesas y no callbacks?
+
+
+  ```javascript
+  function buscarEnFacebook(texto){
+    
+    /* Hace algunas cosas y devuelve una promesa que resuelve o rechaza en "result" */
+
+
+    algunasCosasDevuelveUnaPromesa(/*argumentos*/)
+    
+    //Tal como puede ser una llamada http a un servicio rest con axios
+      
+      .then(function(result){
+
+        //la promesa vuelve en estado 'fullfilled' y por eso sabemos que los datos estan
+
+        return result.data;
+      })
+      .catch(function(result){
+        
+        //la promesa vuelve en estado 'rejected y por eso sabemos que recibimos un error
+
+        return result.error
+      })
+  }
+  ```
+
 
   - ¿Podés replicar la siguiente API?
     ```javascript
